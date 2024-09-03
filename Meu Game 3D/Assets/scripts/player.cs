@@ -8,7 +8,7 @@ public class player : MonoBehaviour
 {
     public int velocidade = 10;
     public int pulo = 7;
-    public bool noch„o;
+    public bool nocho;
    
     private Rigidbody rb;
    
@@ -22,9 +22,9 @@ public class player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!noch„o && collision.gameObject.tag == "ch„o")
+        if (!nocho && collision.gameObject.tag == "ch√£o");
         {
-            noch„o = true;
+            nocho = true;
         }
     }
 
@@ -39,10 +39,10 @@ public class player : MonoBehaviour
         UnityEngine.Vector3 direcao = new Vector3(x:h, y:0, z:v);
         rb.AddForce(direcao * velocidade);
        
-        if (Input.GetKeyDown(KeyCode.Space) && noch„o)
+        if (Input.GetKeyDown(KeyCode.Space) && nocho)
         {
             rb.AddForce(Vector3.up * pulo, ForceMode.Impulse);
-            noch„o = false;
+            nocho = false;
         }
 
 
