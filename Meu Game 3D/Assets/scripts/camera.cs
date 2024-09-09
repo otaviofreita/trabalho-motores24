@@ -1,14 +1,12 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class camera : MonoBehaviour
+public class camerafollow : MonoBehaviour
 {
-    private Transform alvo;
-
+    private Transform alvo; 
+    
     public Vector3 offset;
-    // Start is called before the first frame update
     void Start()
     {
         alvo = GameObject.FindWithTag("Player").transform;
@@ -21,20 +19,6 @@ public class camera : MonoBehaviour
         transform.position = alvo.position - offset;
     }
 }
-
-
-void Update()
-{
-        vector3 posFinal = alvo.position + offset;
-        
-
-
-
-
-
-
-
-
 
 
 

@@ -1,60 +1,59 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using Unity.VisualScripting;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Vector3 = UnityEngine.Vector3;
 
 public class player : MonoBehaviour
 {
-    public int velocidade = 10;
-    public int pulo = 7;
-    public bool nocho;
-   
-    private Rigidbody rb;
-   
-   
-   
+    public int velocidade = 5;
+    public int forcapulo = 7;
+    public bool Nochao;
+    
+    public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("start");
         TryGetComponent(out rb);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!nocho && collision.gameObject.tag == "chão");
+        if (!Nochao && collision.gameObject.tag == "chão")
         {
-            nocho = true;
+            Nochao = true;
         }
     }
 
-
-
-    // Update is called once per frame
     void Update()
     {
-        float h = Input.GetAxis("Horizontal"); //-1 esqueda, o nada, 1 direita
-        float v = Input.GetAxis("Vertical");// -1 tras, 0 nada, 1 pra frente
+        Debug.Log("update");
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
 
-        UnityEngine.Vector3 direcao = new Vector3(x:h, y:0, z:v);
-        rb.AddForce(direcao * velocidade);
-       
-        if (Input.GetKeyDown(KeyCode.Space) && nocho)
+        Vector3 direcao = new Vector3(x, 0, y );
+        rb.AddForce(direcao * velocidade * Time.deltaTime, ForceMode.Impulse);
+
+        if (Input.GetKeyDown(KeyCode.Space) && Nochao)
         {
-            rb.AddForce(Vector3.up * pulo, ForceMode.Impulse);
-            nocho = false;
+            rb.AddForce(Vector3.up * forcapulo, ForceMode.Impulse);
+            Nochao = false;
         }
-
-
-
-        if (transform.position.y <= -5)
+         
+         
+         
+        if (transform.position.y < -5)
         {
-            //bolacaiu
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
-
 
 
 
