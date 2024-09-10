@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI hud, msgvitoria;
+    public TextMeshProUGUI hud, victory;
     public int restantes;
     
     // Start is called before the first frame update
@@ -12,21 +12,20 @@ public class GameManager : MonoBehaviour
     {
         restantes = FindObjectsOfType<Moeda>().Length;
 
-        hud.text = $"moedas restantes : {restantes}";
+        hud.text = $"moedas: {restantes}";
         
     }
     
-    public void subtraimoedas(int valor)
+    public void SubtraiMoedas(int valor)
 
     {
         restantes -= valor;
-        hud.text = $"moedas restantes: {restantes}";
+        hud.text = $"moedas: {restantes}";
 
-        if (restantes <= 0) ;
-
+            if (restantes <= 0)
         {
             //ganhou o game ne pai
-            msgvitoria.text = "parabéns";
+            victory.text = "se foda";
         }
     }
 
