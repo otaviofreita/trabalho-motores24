@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18204895, g: 0.22774085, b: 0.30739728, a: 1}
+  m_IndirectSpecularColor: {r: 0.18204895, g: 0.22774087, b: 0.3073973, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'moedas: 3'
+  m_text: 'moedas:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -406,8 +406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c30316e9e006745aeef0f6c134007a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hud: {fileID: 0}
-  victory: {fileID: 0}
+  hud: {fileID: 304765}
+  victory: {fileID: 640350140}
   restantes: 0
 --- !u!1 &378141882
 GameObject:
@@ -2195,7 +2195,7 @@ Transform:
   m_GameObject: {fileID: 2147092203}
   serializedVersion: 2
   m_LocalRotation: {x: -0.075066335, y: 0.7196046, z: -0.68941283, w: -0.03527384}
-  m_LocalPosition: {x: 34.75641, y: -1.6338844, z: -25.171844}
+  m_LocalPosition: {x: 35.33, y: -1.09, z: -36.01}
   m_LocalScale: {x: 3.5129364, y: 0.27607602, z: 4.3808384}
   m_ConstrainProportionsScale: 0
   m_Children: []

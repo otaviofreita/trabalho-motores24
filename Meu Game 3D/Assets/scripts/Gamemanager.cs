@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
             if (restantes <= 0)
         {
             //ganhou o game ne pai
-            victory.text = "se foda";
+            victory.text = "Parabens!!!";
         }
     }
 
